@@ -1,0 +1,32 @@
+import pandas as pd
+
+reviews = {
+    "Product": [
+        "Face Cream",
+        "Face Wash",
+        "Shampoo",
+        "Body Lotion",
+        "Face Serum",
+        "Sunscreen",
+        "Hair Oil",
+        "Moisturizer",
+        "Face Mask",
+        "Conditioner"
+    ],
+    "Review": [
+        "This face cream is amazing and makes my skin soft",
+        "The face wash is terrible and dries my skin",
+        "I love this shampoo, it makes my hair smooth",
+        "The body lotion is okay, nothing special",
+        "This serum is excellent and works very well",
+        "The sunscreen is bad and leaves a white layer",
+        "The hair oil is good and makes my hair shiny",
+        "The moisturizer is average",
+        "I hate this face mask, it caused irritation",
+        "The conditioner is nice and makes hair soft"
+    ]
+}
+
+df = pd.DataFrame(reviews)
+
+print(df)
