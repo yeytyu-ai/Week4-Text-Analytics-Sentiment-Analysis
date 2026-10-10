@@ -1,0 +1,111 @@
+!pip install python-docx
+
+from docx import Document
+from google.colab import files
+
+doc = Document()
+
+doc.add_heading(
+    'Week 4 Task Report',
+    0
+)
+
+doc.add_heading(
+    'Text Analytics and Sentiment Analysis',
+    level=1
+)
+
+doc.add_paragraph('Domain: Data Analytics')
+doc.add_paragraph('Tools Used: Python, Pandas, TextBlob, Matplotlib, WordCloud')
+
+doc.add_heading('1. Introduction', level=1)
+doc.add_paragraph(
+    'This project focuses on text analytics and sentiment analysis '
+    'of beauty and wellness product reviews. Customer reviews help '
+    'us understand customer opinions and satisfaction. The main '
+    'objective is to classify reviews into positive, negative, and '
+    'neutral categories using Python.'
+)
+
+doc.add_heading('2. Dataset Description', level=1)
+doc.add_paragraph(
+    'A sample dataset containing 10 customer reviews was created. '
+    'The dataset includes products such as face cream, face wash, '
+    'shampoo, body lotion, serum, sunscreen, hair oil, moisturizer, '
+    'face mask, and conditioner. Each record contains a product name '
+    'and its customer review.'
+)
+
+doc.add_heading('3. Text Preprocessing', level=1)
+doc.add_paragraph(
+    'Text preprocessing was performed using Python. All review text '
+    'was converted into lowercase letters. Unwanted characters and '
+    'punctuation were removed, and extra spaces were reduced. '
+    'Tokenization was then performed to split reviews into individual words.'
+)
+
+doc.add_heading('4. Sentiment Analysis', level=1)
+doc.add_paragraph(
+    'TextBlob was used to calculate the sentiment polarity of each '
+    'review. Reviews with positive polarity were classified as Positive, '
+    'reviews with negative polarity as Negative, and reviews with zero '
+    'polarity as Neutral. This method provides a basic understanding '
+    'of customer opinions.'
+)
+
+doc.add_heading('5. Data Visualization', level=1)
+doc.add_paragraph(
+    'Matplotlib was used to create a bar chart showing the distribution '
+    'of positive, negative, and neutral reviews. A word cloud was also '
+    'created to highlight frequently appearing words in customer reviews. '
+    'The results were saved in a CSV file for further analysis.'
+)
+
+doc.add_heading('6. Key Findings', level=1)
+doc.add_paragraph(
+    'The sample reviews contain positive and negative customer opinions. '
+    'Words such as amazing, love, excellent, good, and nice express '
+    'positive feedback. Words such as terrible, bad, and hate express '
+    'negative feedback. Some reviews also mention problems such as dry '
+    'skin and irritation. These findings demonstrate how text analytics '
+    'can help identify customer satisfaction and product concerns.'
+)
+
+doc.add_heading('7. Conclusion', level=1)
+doc.add_paragraph(
+    'This project provided practical experience in text preprocessing, '
+    'tokenization, sentiment analysis, percentage calculation, and data '
+    'visualization using Python. The results demonstrate how customer '
+    'reviews can be organized and analyzed to understand customer opinions. '
+    'Future work can use a larger dataset and more advanced models to '
+    'improve the accuracy of sentiment classification.'
+)
+
+doc.add_heading('8. Project Description', level=1)
+doc.add_paragraph(
+    'The project Text Analytics and Sentiment Analysis analyzes customer '
+    'reviews of beauty and wellness products using Python. The objective '
+    'is to identify whether customers express positive, negative, or neutral '
+    'opinions. A sample dataset was prepared with product names and customer '
+    'reviews. Pandas was used to manage the dataset. Text preprocessing was '
+    'performed by converting text to lowercase, removing unwanted characters, '
+    'and reducing extra spaces. Tokenization was used to split cleaned reviews '
+    'into individual words. TextBlob was applied to calculate sentiment polarity '
+    'and classify reviews. Matplotlib was used to display sentiment distribution '
+    'through a bar chart, while WordCloud displayed frequently used words. '
+    'Sentiment counts and percentages were calculated, and the processed results '
+    'were exported to a CSV file. This project demonstrates a basic text analytics '
+    'workflow and helps identify common customer opinions and possible product '
+    'issues. The sample dataset is small, so a larger dataset and manual checking '
+    'would be useful for more reliable real-world conclusions. Through this task, '
+    'practical knowledge of Python, text processing, sentiment analysis, data '
+    'visualization, and report preparation was developed.'
+)
+
+filename = 'Week4_Text_Analytics_Sentiment_Analysis_Report.docx'
+
+doc.save(filename)
+
+files.download(filename)
+
+print('Report created and downloaded successfully!')
